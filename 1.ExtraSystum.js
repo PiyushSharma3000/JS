@@ -625,7 +625,8 @@ a[b]={
     name: "Ankit",
 }
 a[c]={
-    name: "rahul", //it overwrites the first value
+    name: "rahul", //it overwrites the first //     a["[object Object]"] = { name: "ankit" };
+a["[object Object]"] = { name: "rahul" }; // ❗OVERWRITES the previous one value
 }
 
 console.log(a[b]);
