@@ -566,6 +566,10 @@ console.log(obj3); //{obj1: {…}, obj2: {…}}
 obj3={ ...obj1, ...obj2 };
 console.log(obj3);
 
+let target = { a : 1, b:2}
+let source = {c : 3, d:4}
+
+let newObj = Object.assign(target, source); //{ a : 1, b:2, c : 3, d:4}
 
 obj3=Object.assign({}, obj1, obj2); //here 1st empty obj act as target and obj1 and obj2 act as source
 console.log(obj3); //{1:"a", 2:"b", 3:"c", 4:"d"}
