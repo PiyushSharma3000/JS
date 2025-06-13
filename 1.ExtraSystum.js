@@ -571,6 +571,35 @@ let source = {c : 3, d:4}
 
 let newObj = Object.assign(target, source); //{ a : 1, b:2, c : 3, d:4}
 
+console.log(newObj);
+
+//without {}modifies the og array
+const original = { a: 1 };
+const updates = { b: 2 };
+
+Object.assign(original, updates);
+
+console.log(original); // 👉 { a: 1, b: 2 } ✅ Modified
+
+//with {} doesn't 
+const original = { a: 1 };
+const updates = { b: 2 };
+
+const newObject = Object.assign({}, original, updates);
+
+console.log(original);   // 👉 { a: 1 } ✅ Unchanged
+console.log(newObject);  // 👉 { a: 1, b: 2 }
+
+//Object.assign also rewrites the value of target obj from source obj
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+
+const result = Object.assign({}, obj1, obj2);
+
+console.log(result); // 👉 { a: 1, b: 3, c: 4 }
+
+//
+
 obj3=Object.assign({}, obj1, obj2); //here 1st empty obj act as target and obj1 and obj2 act as source
 console.log(obj3); //{1:"a", 2:"b", 3:"c", 4:"d"}
 
